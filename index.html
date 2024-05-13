@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Poolie Spins</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="keywords" content="new casino games, online casino">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="img/1.png" rel="shortcut icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ====================== Cookie Fonts ================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <!-- ====================== Cookie PopUp Start ========================== -->
+		<div class="cookie-overlay show-overlay"></div>
+		<div class="cookie-overlay-2 show-overlay-2"></div>
+		<div class="cookie-popup" id="cookiePopup">
+			<div class="cookie-description">
+				<div class="cookie-text">
+                    <img src="img/dayor.gif" alt="cookie photo">
+					<h3>Riservato Ai Maggiorenni</h3>
+					<p>Si prega di confermare di avere più di 18 anni.</p>
+				</div>
+				<div class="cookie-btn">
+					<div class="cookie-double-btn">
+						<button onclick="acceptCookies()" class="cookie-accept">Conferma</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+      <style>
+         /* ---------------------------------- 
+            Cookie Popup CSS Start 
+         ------------------------------------- */
+         .cookie-popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            padding: 30px 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            color: #3b3e4a;
+            box-shadow: 0px 0px 20px 0px #e8e8e834;
+            border-radius: 10px;
+        }
+
+		.cookie-popup.show {
+			display: block;
+			max-width: 390px;
+			margin: 0 auto;
+			text-align: center;
+			padding: 30px 15px;
+		}
+
+        .cookie-text > img{
+            width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+         .cookie-text > h3 {
+            color: #2e2e2e;
+            font-size: 28px;
+            font-weight: 700;
+            font-family: "Source Sans 3", sans-serif;
+         }
+
+         .cookie-text > p {
+            font-size: 16px;
+            line-height: 28px;
+            font-style: normal;
+            font-weight: 500;
+            color: #505050;
+            font-family: "Source Sans 3", sans-serif;
+            margin: 10px 0px 15px 0px;
+        }
+
+        button.cookie-cancel > img {
+            width: 20px;
+            margin: 0px 5px;
+            position: relative;
+            top: -1px;
+        }
+
+        .cookie-btn{
+            display: inline-flex;
+            gap: 15px;
+        }
+
+         .cookie-double-btn button {
+            font-size: 15px;
+            padding: 12px 34px;
+            font-weight: 500;
+            cursor: pointer;
+            user-select: none;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-in-out;
+            border: none;
+            color: #ffffff;
+            outline: 0px;
+            font-family: "Source Sans 3", sans-serif;
+            background: #90131b;
+            text-transform: uppercase;
+            margin: 20px 0px 0px 0px;
+            border-radius: 0px;
+            letter-spacing: 0.4px;
+            border-radius: 10px;
+         }
+
+         .cookie-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(#000000ef, #000000ef);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 999;
+            display: none;
+         }
+
+         .cookie-overlay-2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(#000000ef, #000000ef);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 999;
+            display: none;
+         }
+
+         .show-overlay {
+            display: block;
+         }
+
+         .show-overlay-2 {
+            display: block;
+         }
+
+
+         @media only screen and (max-width: 600px) and (min-width: 320px) {
+            .cookie-popup.show {
+                margin: 0px 30px;
+            }
+
+            .cookie-overlay{
+               display: none;
+            }
+
+            .cookie-text > img {
+                width: 130px;
+                height: auto;
+            }
+
+            .cookie-text > h3 {
+                color: #2e2e2e;
+                font-size: 20px;
+            }
+
+            .cookie-text > p {
+                padding: 0px 5px;
+                font-size: 14px;
+            }
+
+            .cookie-double-btn button {
+                padding: 10px 34px;
+                margin: 15px 0px 0px 0px;
+            }
+         }
+
+         @media only screen and (max-width: 850px) and (min-width: 768px) {
+            .cookie-popup.show {
+               margin: 0 auto;
+            }
+
+            .cookie-overlay-2{
+               display: none;
+            }
+         }
+         
+         @media only screen and (min-width: 1025px) {
+            .cookie-overlay-2 {
+               display: none;
+            }
+         }    
+         /* ------------------------------------ 
+            Cookie Popup CSS End 
+         --------------------------------------- */
+      </style>
+
+
+      <script>
+         // ------------------- Cookie Popup JS Start -----------------------
+         document.addEventListener("DOMContentLoaded", function () {
+            if (!getCookie("acceptedCookies")) {
+               // Load background image of the popup first
+               document.querySelector(".cookie-overlay").classList.add("show-overlay");
+               document.querySelector(".cookie-overlay-2").classList.add("show-overlay-2");
+               document.getElementById("cookiePopup").classList.add("show");
+            } else {
+               // If cookies have already been accepted, remove the popup and overlay
+               document.querySelector(".cookie-overlay").classList.remove("show-overlay");
+               document.querySelector(".cookie-overlay-2").classList.remove("show-overlay-2");
+               document.getElementById("cookiePopup").classList.remove("show");
+            }
+         });
+
+         function acceptCookies() {
+            document.getElementById("cookiePopup").classList.remove("show");
+            document.querySelector(".cookie-overlay").classList.remove("show-overlay");
+            document.querySelector(".cookie-overlay-2").classList.remove("show-overlay-2");
+            setCookie("acceptedCookies", true, 30);
+
+            // Load content after accepting cookies
+            setTimeout(function () {
+               console.log("Content uploaded after 3 seconds");
+               // Add your code here to load website images and content
+            }, 3000);
+         }
+
+         function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+               var date = new Date();
+               date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+               expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+         }
+
+         function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+               var c = ca[i];
+               while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+               if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+         }
+         // ------------------- Cookie Popup JS End -----------------------
+      </script>
+      <!-- ==================== Cookie PopUp End ============================== -->
+
+</head>
+<body>
+
+
+<nav style="background-color: black" class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand" href="index.php">
+            <img src="./img/1.png" alt="" class="img-fluid w-25 bg-white p-2" style="border-radius: 15px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active"  href="privacy.html">Privacy Policy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="terms.html">Terms & Conditions</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="header pt-5"
+     style="background-image: url(img/bg1.jpg); background-repeat: no-repeat; background-size: cover; height: 93vh">
+    <div class="container pt-5">
+        <h1 class="text-white h1 font-weight-light top">Free to Play Games</h1>
+        <p class="text-white p-top w-50">
+            This site provides the best games for killing your free time. Visit frequesntly as we update our site
+            regularly.
+            These games are provided by the top gaming software house to give you an ultimate gaming experience every
+            time. Happy Gaming Everyone!
+
+            <br> <br>
+
+            Scroll now to view Games.
+        </p>
+    </div>
+</div>
+
+<div class="container p-5">
+    <h1 class="h1 text-center mb-5">Top Games</h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card">
+                <img src="img/Poolie Spins-1.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Dice Dice Dice</h5>
+                    <p class="card-text">Dice Dice Dice is a 5x3 slot with a classic arcade feel but with the exciting potential of landing Wild Dice in the middle reel. If the dice form part of a winning line they are rolled to award big multipliers and wins of up to 5,000x! When Rolling Respins are triggered the dice and wins keep coming and the multiplier keeps growing in this thriller of a slot!<br> <br></p>
+                    <a href="1.html" class="btn btn-outline-danger">Play Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="img/Poolie Spins-2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Rio Stars</h5>
+                    <p class="card-text">It's carnival time! Spin to the beat of the Samba drum and aim for wins of over 2,000x in the vibrant Rio Stars! In this kaleidoscopic 5x4 slot, the player eagerly awaits a sighting of the carnival drums as they trigger every winning feature including Carnival Reels, where all low-paying symbols are removed, 3x3 Mega Wilds, Rio Dancer Wilds, the Rio Win Multiplier and free Rio Spins. A festive soundtrack completes the scene, transporting players to the colourful dancer-filled streets of Brazil's Rio de Janeiro.Desktop, Tablet, Smartphone, TV, iOS/Android Apps, Mini Games</p>
+                    <a href="2.html" class="btn btn-outline-danger">Play Now</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="img/Poolie Spins-3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Piggy Riches Megaways</h5>
+                    <p class="card-text">Welcome to a world of riches beyond your wildest dreams! NetEnt's classic hit Piggy Riches™ is now available with 117,649 MegaWays™ to win up to 10,000x stake! Lady Pig and Gentleman Pig are a filthy rich power couple, the pinnacle of sophisticated swine; no mud-rolling for these pigs – just fine champagne and the best that money can buy!</p>
+                    <a href="3.html" class="btn btn-outline-danger">Play Now</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="img/Poolie Spins-4.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Jewel Scarabs</h5>
+                    <p class="card-text">Take a trip to ancient Egypt where untold riches await in this exciting 5x3 slot. The Wild Scarabs fly around the slot for as long as they remain part of a win line. Land three Scarabs for the bonus Golden Spins where their multipliers increase by +1 for each win they form. If more than one Scarab forms part of the same win line they multiply by each other for huge wins of over 5,000x in this Middle Eastern thriller! <br><br></p>
+                    <a href="4.html" class="btn btn-outline-danger">Play Now</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer style="background-color: black" class="p-5">
+    <div class="row mb-3">
+        <img src="img/footerlogo.png" alt="" class="img-fluid w-25 mx-auto py-3 bg-danger"
+             style="border-radius: 20px;">
+    </div>
+    <p class="text-center mx-auto w-75 small text-white">This is a FREE-TO-PLAY social casino games site where you use play credits only.
+        This website does NOT offer "real money" gambling opportunities or chance to win prizes or gifts.
+        This site is intended for 18+ adults only. Practicing at social casino site does NOT guarantee successes at
+        "real money" gambling in future.
+    </p>
+
+
+</footer>
+
+
+</body>
+</html>
